@@ -6,7 +6,7 @@ float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float faceX, faceY, faceDiameter;
 //
 void setup() {
-  size(1000, 800);
+  size(1200, 800);
   //
   appWidth = width;
   appHeight = height;
@@ -25,9 +25,9 @@ void setup() {
   String Imagefolder = "Images for the Celebration Card2";
   String exitImage = "exet.png";
   //
-  xRectQuit = appWidth*18/20+20;
+  xRectQuit = appWidth*19/20-28;
   yRectQuit = appHeight*0/20;
-  widthRectQuit = appWidth*1/12;
+  widthRectQuit = appWidth*1/13;
   heightRectQuit = appHeight*1/12;
   rectQuit = loadImage(imagesPath + Imagefolder + open + exitImage);
   //
