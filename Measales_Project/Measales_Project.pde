@@ -15,11 +15,10 @@ void setup() {
   faceX = appWidth*1/2;
   faceY = appHeight*1/2;
   faceDiameter = smallerDimension;
-  //
-  xRectBackground = appWidth*0;
-  yRectBackground = appHeight*0;
-  widthRectBackground = appWidth-1;
-  heightRectBackground = appHeight-1;
+  xRectBackground = faceX - faceDiameter*1/2;
+  yRectBackground = faceY - faceDiameter*1/2;
+  widthRectBackground = faceDiameter;
+  heightRectBackground = faceDiameter;
   //
   String open = "/";
   String imagesPath = open;
