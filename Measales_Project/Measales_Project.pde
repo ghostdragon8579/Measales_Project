@@ -1,6 +1,7 @@
 //Global Variables
 PImage rectQuit;
 int appWidth, appHeight;
+float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float faceX, faceY, faceDiameter;
 //
@@ -15,6 +16,11 @@ void setup() {
   faceY = appHeight*1/2;
   faceDiameter = smallerDimension;
   //
+  xRectBackground = appWidth*0;
+  yRectBackground = appHeight*0;
+  widthRectBackground = appWidth-1;
+  heightRectBackground = appHeight-1;
+  //
   String open = "/";
   String imagesPath = open;
   String Imagefolder = "Images for the Celebration Card2";
@@ -26,16 +32,12 @@ void setup() {
   heightRectQuit = appHeight*1/12;
   rectQuit = loadImage(imagesPath + Imagefolder + open + exitImage);
   //
-  ellipse(faceX, faceY, faceDiameter, faceDiameter);
-  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
-  //
 } //End setup
 //
 void draw() {
-  //ellipse(faceX, faceY, faceDiameter, faceDiameter);
-  //
+  ellipse(faceX, faceY, faceDiameter, faceDiameter);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
-  //
+  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   //
 } //End draw
