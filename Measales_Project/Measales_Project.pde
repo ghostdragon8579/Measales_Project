@@ -34,9 +34,9 @@ void setup() {
 } //End setup
 //
 void draw() {
-  ellipse(faceX, faceY, faceDiameter, faceDiameter);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
+  ellipse(faceX, faceY, faceDiameter, faceDiameter); //load ellipses last
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   //
 } //End draw
