@@ -1,6 +1,13 @@
 //Global Variables
 PImage rectQuit;
 int appWidth, appHeight;
+float xRectButton1, yRectButton1, widthRectButton1, heightRectButton1;
+float xRectButton2, yRectButton2, widthRectButton2, heightRectButton2;
+float xRectButton3, yRectButton3, widthRectButton3, heightRectButton3;
+float xRectButton4, yRectButton4, widthRectButton4, heightRectButton4;
+float xleftEye, yleftEye, xrightEye, yrightEye, eyeDimater;
+float xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3;
+float xmouth1, ymouth1, xmouth2, ymouth2;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float faceX, faceY, faceDiameter;
@@ -19,6 +26,24 @@ void setup() {
   yRectBackground = faceY - faceDiameter*1/2;
   widthRectBackground = faceDiameter;
   heightRectBackground = faceDiameter;
+  println(faceDiameter);
+  //
+  xleftEye = xRectBackground+(smallerDimension*3/10);
+  yleftEye = yRectBackground+(smallerDimension*1/4);
+  xrightEye = xRectBackground+(smallerDimension*7/10);
+  yrightEye = yRectBackground+(smallerDimension*1/4);
+  eyeDimater = smallerDimension*1/10;
+  //xTriangle1 = smallerDimension;
+  //yTriangle1 = smallerDimension;
+  //xTriangle2 = smallerDimension;
+  //yTriangle2 = smallerDimension;
+  //xTriangle3 = smallerDimension;
+  //yTriangle3 = smallerDimension;
+  //xmouth1 = smallerDimension;
+  //ymouth1 = smallerDimension;
+  //xmouth2 = smallerDimension;
+  //ymouth2 = smallerDimension;
+  //
   //
   String open = "/";
   String imagesPath = open;
@@ -36,7 +61,10 @@ void setup() {
 void draw() {
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
-  ellipse(faceX, faceY, faceDiameter, faceDiameter); //load ellipses last
+  ellipse(faceX, faceY, faceDiameter, faceDiameter);
+  ellipse(xleftEye, yleftEye, eyeDimater, eyeDimater);
+  ellipse(xrightEye, yrightEye, eyeDimater, eyeDimater);
+  triangle(xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   //
 } //End draw
