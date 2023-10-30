@@ -7,7 +7,7 @@ float xRectButton3, yRectButton3, widthRectButton3, heightRectButton3;
 float xRectButton4, yRectButton4, widthRectButton4, heightRectButton4;
 float xleftEye, yleftEye, xrightEye, yrightEye, eyeDimater;
 float xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3;
-float xmouth1, ymouth1, xmouth2, ymouth2;
+float xmouth1, ymouth1, xmouth2, ymouth2, widthmouth, resetmouth;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float faceX, faceY, faceDiameter;
@@ -34,15 +34,17 @@ void setup() {
   yrightEye = yRectBackground+(smallerDimension*1/4);
   eyeDimater = smallerDimension*1/10;
   xTriangle1 = faceX;
-  yTriangle1 = yrightEye+80;
-  xTriangle2 = xleftEye-20;
+  yTriangle1 = yrightEye;
+  xTriangle2 = xleftEye+80;
   yTriangle2 = faceY;
-  xTriangle3 = xrightEye;
+  xTriangle3 = xrightEye-80;
   yTriangle3 = faceY;
-  //xmouth1 = smallerDimension;
-  //ymouth1 = smallerDimension;
-  //xmouth2 = smallerDimension;
-  //ymouth2 = smallerDimension;
+  xmouth1 = xTriangle2;
+  ymouth1 = yRectBackground+smallerDimension*3/4;
+  xmouth2 = xTriangle3;
+  ymouth2 = ymouth1;
+  widthmouth = smallerDimension*1/20;
+  resetmouth = smallerDimension/smallerDimension;
   //
   //
   String open = "/";
@@ -65,6 +67,9 @@ void draw() {
   ellipse(xleftEye, yleftEye, eyeDimater, eyeDimater);
   ellipse(xrightEye, yrightEye, eyeDimater, eyeDimater);
   triangle(xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3);
+  strokeWeight(widthmouth);
+  line(xmouth1, ymouth1, xmouth2, ymouth2);
+  strokeWeight(resetmouth);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   //
 } //End draw
