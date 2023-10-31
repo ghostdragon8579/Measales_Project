@@ -12,6 +12,7 @@ float xRectBackground, yRectBackground, widthRectBackground, heightRectBackgroun
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float faceX, faceY, faceDiameter;
 float xMeasale, yMeasale, MeasaleDiameter;
+color resetcolor;
 //
 void setup() {
   size(1200, 800);
@@ -46,9 +47,6 @@ void setup() {
   ymouth2 = ymouth1;
   widthmouth = smallerDimension*1/20;
   resetmouth = smallerDimension/smallerDimension;
-  xMeasale = ;
-  yMeasale = ;
-  MeasaleDiameter = ;
   //
   String open = "/";
   String imagesPath = open;
@@ -61,12 +59,13 @@ void setup() {
   heightRectQuit = appHeight*1/12;
   rectQuit = loadImage(imagesPath + Imagefolder + open + exitImage);
   //
+  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
+  ellipse(faceX, faceY, faceDiameter, faceDiameter);
+  //
 } //End setup
 //
 void draw() {
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
-  rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
-  ellipse(faceX, faceY, faceDiameter, faceDiameter);
   ellipse(xleftEye, yleftEye, eyeDimater, eyeDimater);
   ellipse(xrightEye, yrightEye, eyeDimater, eyeDimater);
   triangle(xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3);
@@ -74,8 +73,13 @@ void draw() {
   line(xmouth1, ymouth1, xmouth2, ymouth2);
   strokeWeight(resetmouth);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
-  //
+  fill(measlecolor);
+  xMeasale = random(0, appWidth);
+  yMeasale = random(0, appHeight);
+  int smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
+  MeasaleDiameter = random(smallerDimension*1/40, smallerDimension*1/15);
   ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
+  fill(resetcolor);
   //
 } //End draw
 //
