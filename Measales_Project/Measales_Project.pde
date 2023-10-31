@@ -11,6 +11,7 @@ float xmouth1, ymouth1, xmouth2, ymouth2, widthmouth, resetmouth;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float faceX, faceY, faceDiameter;
+float xMeasale, yMeasale, MeasaleDiameter;
 //
 void setup() {
   size(1200, 800);
@@ -45,7 +46,9 @@ void setup() {
   ymouth2 = ymouth1;
   widthmouth = smallerDimension*1/20;
   resetmouth = smallerDimension/smallerDimension;
-  //
+  xMeasale = ;
+  yMeasale = ;
+  MeasaleDiameter = ;
   //
   String open = "/";
   String imagesPath = open;
@@ -71,6 +74,8 @@ void draw() {
   line(xmouth1, ymouth1, xmouth2, ymouth2);
   strokeWeight(resetmouth);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  //
+  ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
   //
 } //End draw
 //
