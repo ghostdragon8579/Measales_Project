@@ -34,7 +34,7 @@ void setup() {
   yrightEye = yRectBackground+(smallerDimension*1/4);
   eyeDimater = smallerDimension*1/10;
   xTriangle1 = faceX;
-  yTriangle1 = yrightEye;
+  yTriangle1 = yrightEye+60;
   xTriangle2 = xleftEye+80;
   yTriangle2 = faceY;
   xTriangle3 = xrightEye-80;
