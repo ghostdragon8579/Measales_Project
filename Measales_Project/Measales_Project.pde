@@ -12,7 +12,7 @@ float xRectBackground, yRectBackground, widthRectBackground, heightRectBackgroun
 float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float faceX, faceY, faceDiameter;
 float xMeasale, yMeasale, MeasaleDiameter;
-color resetcolor;
+color resetcolor=#FFFFFF;
 //
 void setup() {
   size(1200, 800);
@@ -65,21 +65,23 @@ void setup() {
 } //End setup
 //
 void draw() {
-  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   ellipse(xleftEye, yleftEye, eyeDimater, eyeDimater);
   ellipse(xrightEye, yrightEye, eyeDimater, eyeDimater);
   triangle(xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3);
   strokeWeight(widthmouth);
   line(xmouth1, ymouth1, xmouth2, ymouth2);
   strokeWeight(resetmouth);
-  image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
-  fill(measlecolor);
-  xMeasale = random(0, appWidth);
-  yMeasale = random(0, appHeight);
+  //
+  color measalecolor = color(255, random(0, 80), random(0, 40));
   int smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
+  fill(measalecolor);
+  xMeasale = random(smallerDimension-600, smallerDimension+200);
+  yMeasale = random(smallerDimension);
   MeasaleDiameter = random(smallerDimension*1/40, smallerDimension*1/15);
   ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
   fill(resetcolor);
+  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   //
 } //End draw
 //
