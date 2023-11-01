@@ -5,6 +5,8 @@ float xRectButton1, yRectButton1, widthRectButton1, heightRectButton1;
 float xRectButton2, yRectButton2, widthRectButton2, heightRectButton2;
 float xRectButton3, yRectButton3, widthRectButton3, heightRectButton3;
 float xRectButton4, yRectButton4, widthRectButton4, heightRectButton4;
+float xleftEyePupil, yleftEyePupil, leftEyePupilDimater;
+float xrightEyePupil, yrightEyePupil, rightEyePupilDimater;
 float xleftEye, yleftEye, xrightEye, yrightEye, eyeDimater;
 float xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3;
 float xmouth1, ymouth1, xmouth2, ymouth2, widthmouth, resetmouth;
@@ -28,8 +30,12 @@ void setup() {
   yRectBackground = faceY - faceDiameter*1/2;
   widthRectBackground = faceDiameter;
   heightRectBackground = faceDiameter;
-  println(faceDiameter);
-  //
+  //xleftEyePupil
+  //yleftEyePupil
+  //leftEyePupilDimater
+  //xrightEyePupil
+  //yrightEyePupil
+  //rightEyePupilDimater
   xleftEye = xRectBackground+(smallerDimension*3/10);
   yleftEye = yRectBackground+(smallerDimension*1/4);
   xrightEye = xRectBackground+(smallerDimension*7/10);
@@ -75,9 +81,9 @@ void draw() {
   color measalecolor = color(255, random(0, 80), random(0, 40));
   int smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
   fill(measalecolor);
-  xMeasale = random(smallerDimension-600, smallerDimension+200);
-  yMeasale = random(smallerDimension);
-  MeasaleDiameter = random(smallerDimension*1/40, smallerDimension*1/15);
+  xMeasale = random(xRectBackground, xRectBackground+widthRectBackground);
+  yMeasale = random(yRectBackground, yRectBackground+heightRectBackground);
+  MeasaleDiameter = random(smallerDimension*1/50, smallerDimension*1/20);
   ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
   fill(resetcolor);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
