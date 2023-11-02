@@ -30,12 +30,12 @@ void setup() {
   yRectBackground = faceY - faceDiameter*1/2;
   widthRectBackground = faceDiameter;
   heightRectBackground = faceDiameter;
-  //xleftEyePupil
-  //yleftEyePupil
-  //leftEyePupilDimater
-  //xrightEyePupil
-  //yrightEyePupil
-  //rightEyePupilDimater
+  //xleftEyePupil = ;
+  //yleftEyePupil = ;
+  //leftEyePupilDimater = smallerDimension*1/20;
+  //xrightEyePupil = ;
+  //yrightEyePupil = ;
+  //rightEyePupilDimater = ;
   xleftEye = xRectBackground+(smallerDimension*3/10);
   yleftEye = yRectBackground+(smallerDimension*1/4);
   xrightEye = xRectBackground+(smallerDimension*7/10);
@@ -71,6 +71,8 @@ void setup() {
 } //End setup
 //
 void draw() {
+  //ellipse(xleftEyePupil, yleftEyePupil, leftEyePupilDimater, leftEyePupilDimater);
+  //ellipse(xrightEyePupil, yrightEyePupil, rightEyePupilDimater, rightEyePupilDimater);
   ellipse(xleftEye, yleftEye, eyeDimater, eyeDimater);
   ellipse(xrightEye, yrightEye, eyeDimater, eyeDimater);
   triangle(xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3);
