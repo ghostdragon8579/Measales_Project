@@ -1,6 +1,7 @@
 //Global Variables
 PImage rectQuit;
 int appWidth, appHeight;
+float xbutton1, ybutton1, buttonSide;
 float xRectButton1, yRectButton1, widthRectButton1, heightRectButton1;
 float xRectButton2, yRectButton2, widthRectButton2, heightRectButton2;
 float xRectButton3, yRectButton3, widthRectButton3, heightRectButton3;
@@ -54,6 +55,10 @@ void setup() {
   widthmouth = smallerDimension*1/20;
   resetmouth = smallerDimension/smallerDimension;
   //
+  xbutton1 = xRectBackground;
+  ybutton1 = yRectBackground;
+  buttonSide = smallerDimension/2-sqrt(sq(smallerDimension/2)/2);
+  //
   String open = "/";
   String imagesPath = open;
   String Imagefolder = "Images for the Celebration Card2";
@@ -67,6 +72,7 @@ void setup() {
   //
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   ellipse(faceX, faceY, faceDiameter, faceDiameter);
+  rect(xbutton1, ybutton1, buttonSide, buttonSide);
   //
 } //End setup
 //
@@ -85,7 +91,9 @@ void draw() {
   fill(measalecolor);
   MeasaleDiameter = random(smallerDimension*1/50, smallerDimension*1/20);
   xMeasale = random(xRectBackground+(MeasaleDiameter/2), xRectBackground+widthRectBackground-(MeasaleDiameter/2));
+  //while ( xMeasale < xbutton1+buttonSide ) xMeasale = random( xRectBackground+(MeasaleDiameter/2), (xRectBackground+widthRectBackground)-(MeasaleDiameter/2) );
   yMeasale = random(yRectBackground+(MeasaleDiameter/2), yRectBackground+heightRectBackground-(MeasaleDiameter/2));
+  //while ( yMeasale < ybutton1+buttonSide ) yMeasale = random( yRectBackground+(MeasaleDiameter/2), (yRectBackground+heightRectBackground)-(MeasaleDiameter/2) );
   noStroke();
   ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
   stroke(1);
