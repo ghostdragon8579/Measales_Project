@@ -30,12 +30,12 @@ void setup() {
   yRectBackground = faceY - faceDiameter*1/2;
   widthRectBackground = faceDiameter;
   heightRectBackground = faceDiameter;
-  //xleftEyePupil = ;
-  //yleftEyePupil = ;
-  //leftEyePupilDimater = smallerDimension*1/20;
-  //xrightEyePupil = ;
-  //yrightEyePupil = ;
-  //rightEyePupilDimater = ;
+  xleftEyePupil = xleftEye;
+  yleftEyePupil = yleftEye;
+  leftEyePupilDimater = smallerDimension*1/20;
+  xrightEyePupil = xrightEye;
+  yrightEyePupil = yrightEye;
+  rightEyePupilDimater = smallerDimension*1/20;;
   xleftEye = xRectBackground+(smallerDimension*3/10);
   yleftEye = yRectBackground+(smallerDimension*1/4);
   xrightEye = xRectBackground+(smallerDimension*7/10);
@@ -71,22 +71,24 @@ void setup() {
 } //End setup
 //
 void draw() {
-  //ellipse(xleftEyePupil, yleftEyePupil, leftEyePupilDimater, leftEyePupilDimater);
-  //ellipse(xrightEyePupil, yrightEyePupil, rightEyePupilDimater, rightEyePupilDimater);
   ellipse(xleftEye, yleftEye, eyeDimater, eyeDimater);
   ellipse(xrightEye, yrightEye, eyeDimater, eyeDimater);
+  ellipse(xleftEyePupil, yleftEyePupil, leftEyePupilDimater, leftEyePupilDimater);
+  ellipse(xrightEyePupil, yrightEyePupil, rightEyePupilDimater, rightEyePupilDimater);
   triangle(xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3);
   strokeWeight(widthmouth);
   line(xmouth1, ymouth1, xmouth2, ymouth2);
   strokeWeight(resetmouth);
   //
-  color measalecolor = color(255, random(0, 80), random(0, 40));
+  color measalecolor = color(235, random(0, 80), random(0, 40));
   int smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
   fill(measalecolor);
-  xMeasale = random(xRectBackground, xRectBackground+widthRectBackground);
-  yMeasale = random(yRectBackground, yRectBackground+heightRectBackground);
   MeasaleDiameter = random(smallerDimension*1/50, smallerDimension*1/20);
+  xMeasale = random(xRectBackground+(MeasaleDiameter/2), xRectBackground+widthRectBackground-(MeasaleDiameter/2));
+  yMeasale = random(yRectBackground+(MeasaleDiameter/2), yRectBackground+heightRectBackground-(MeasaleDiameter/2));
+  noStroke();
   ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
+  stroke(1);
   fill(resetcolor);
   rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
   image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
