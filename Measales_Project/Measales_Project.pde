@@ -112,15 +112,15 @@ void draw() {
   //
   fill(verdant);
   textAlign(CENTER, CENTER); 
-  size = 50;
-  textFont(IntroductionFont, 30); 
+  size = 40;
+  textFont(IntroductionFont, 40); 
   text(Start, xbutton1, ybutton1, buttonSide, buttonSide);
   fill(resetDefaultInk);
   //
   fill(crimson);
   textAlign(CENTER, CENTER); 
-  size = 50;
-  textFont(InitialFont, 30); 
+  size = 40;
+  textFont(InitialFont, 40); 
   text(Stop, xbutton3, ybutton3, buttonSide, buttonSide);
   fill(resetDefaultInk);
   //
