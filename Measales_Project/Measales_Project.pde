@@ -1,6 +1,13 @@
 //Global Variables
 PImage rectQuit;
+PFont IntroductionFont;
+PFont InitialFont;
+color navy=#020BA7;
+color verdant=#00F512;
+color crimson=#B90202, resetDefaultInk=#FFFFFF;
+color resetcolor=#FFFFFF;
 int appWidth, appHeight;
+int size;
 float xbutton1, ybutton1, buttonSide;
 float xbutton2, ybutton2;
 float xbutton3, ybutton3;
@@ -11,10 +18,9 @@ float xleftEye, yleftEye, xrightEye, yrightEye, eyeDimater;
 float xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3;
 float xmouth1, ymouth1, xmouth2, ymouth2, widthmouth, resetmouth;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
-float xRectQuit, yRectQuit, widthRectQuit, heightRectQuit;
 float faceX, faceY, faceDiameter;
 float xMeasale, yMeasale, MeasaleDiameter;
-color resetcolor=#FFFFFF;
+String Start="Start", Stop="Stop";
 //
 void setup() {
   size(1200, 800);
@@ -68,11 +74,6 @@ void setup() {
   String imagesPath = open;
   String Imagefolder = "Images for the Celebration Card2";
   String exitImage = "exet.png";
-  //
-  xRectQuit = appWidth*19/20-28;
-  yRectQuit = appHeight*0/20;
-  widthRectQuit = appWidth*1/13;
-  heightRectQuit = appHeight*1/12;
   rectQuit = loadImage(imagesPath + Imagefolder + open + exitImage);
   //
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
@@ -81,6 +82,9 @@ void setup() {
   rect(xbutton2, ybutton2, buttonSide, buttonSide);
   rect(xbutton3, ybutton3, buttonSide, buttonSide);
   rect(xbutton4, ybutton4, buttonSide, buttonSide);
+  //
+  IntroductionFont = createFont("Comic Sans MS", 55);
+  InitialFont = createFont("Papyrus", 55);
   //
 } //End setup
 //
@@ -104,8 +108,21 @@ void draw() {
   ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
   stroke(1);
   fill(resetcolor);
-  rect(xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
-  image(rectQuit, xRectQuit, yRectQuit, widthRectQuit, heightRectQuit);
+  image(rectQuit, xbutton2, ybutton2, buttonSide, buttonSide);
+  //
+  fill(verdant);
+  textAlign(CENTER, CENTER); 
+  size = 50;
+  textFont(IntroductionFont, 30); 
+  text(Start, xbutton1, ybutton1, buttonSide, buttonSide);
+  fill(resetDefaultInk);
+  //
+  fill(crimson);
+  textAlign(CENTER, CENTER); 
+  size = 50;
+  textFont(InitialFont, 30); 
+  text(Stop, xbutton3, ybutton3, buttonSide, buttonSide);
+  fill(resetDefaultInk);
   //
 } //End draw
 //
@@ -114,8 +131,8 @@ void keyPressed() {
 //
 void mousePressed() {
   println("Mouse X: ", mouseX, "Mouse Y: ", mouseY);
-  //
-  if ( mouseX>xRectQuit && mouseX<xRectQuit+widthRectQuit && mouseY>yRectQuit && mouseY<yRectQuit+heightRectQuit ) exit();
+  //xbutton2, ybutton2, buttonSide
+  if ( mouseX>xbutton2 && mouseX<xbutton2+buttonSide && mouseY>ybutton2 && mouseY<ybutton2+buttonSide ) exit();
   //
 } //End mousePressed
 //
