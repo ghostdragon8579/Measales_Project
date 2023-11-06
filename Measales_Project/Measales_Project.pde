@@ -2,10 +2,9 @@
 PImage rectQuit;
 int appWidth, appHeight;
 float xbutton1, ybutton1, buttonSide;
-float xRectButton1, yRectButton1, widthRectButton1, heightRectButton1;
-float xRectButton2, yRectButton2, widthRectButton2, heightRectButton2;
-float xRectButton3, yRectButton3, widthRectButton3, heightRectButton3;
-float xRectButton4, yRectButton4, widthRectButton4, heightRectButton4;
+float xbutton2, ybutton2;
+float xbutton3, ybutton3;
+float xbutton4, ybutton4;
 float xleftEyePupil, yleftEyePupil, leftEyePupilDimater;
 float xrightEyePupil, yrightEyePupil, rightEyePupilDimater;
 float xleftEye, yleftEye, xrightEye, yrightEye, eyeDimater;
@@ -31,12 +30,12 @@ void setup() {
   yRectBackground = faceY - faceDiameter*1/2;
   widthRectBackground = faceDiameter;
   heightRectBackground = faceDiameter;
-  xleftEyePupil = xleftEye;
-  yleftEyePupil = yleftEye;
-  leftEyePupilDimater = smallerDimension*1/20;
-  xrightEyePupil = xrightEye;
-  yrightEyePupil = yrightEye;
-  rightEyePupilDimater = smallerDimension*1/20;;
+  //xleftEyePupil = xleftEye;
+  //yleftEyePupil = yleftEye;
+  //leftEyePupilDimater = smallerDimension*1/20;
+  //xrightEyePupil = xrightEye;
+  //yrightEyePupil = yrightEye;
+  //rightEyePupilDimater = smallerDimension*1/20;;
   xleftEye = xRectBackground+(smallerDimension*3/10);
   yleftEye = yRectBackground+(smallerDimension*1/4);
   xrightEye = xRectBackground+(smallerDimension*7/10);
@@ -55,9 +54,15 @@ void setup() {
   widthmouth = smallerDimension*1/20;
   resetmouth = smallerDimension/smallerDimension;
   //
+  buttonSide = smallerDimension/2-sqrt(sq(smallerDimension/2)/2);
   xbutton1 = xRectBackground;
   ybutton1 = yRectBackground;
-  buttonSide = smallerDimension/2-sqrt(sq(smallerDimension/2)/2);
+  xbutton2 = xRectBackground+faceDiameter-buttonSide;
+  ybutton2 = ybutton1;
+  xbutton3 = xbutton2;
+  ybutton3 = yRectBackground+faceDiameter-buttonSide;
+  xbutton4 = xbutton1;
+  ybutton4 = ybutton3;
   //
   String open = "/";
   String imagesPath = open;
@@ -73,14 +78,17 @@ void setup() {
   rect(xRectBackground, yRectBackground, widthRectBackground, heightRectBackground);
   ellipse(faceX, faceY, faceDiameter, faceDiameter);
   rect(xbutton1, ybutton1, buttonSide, buttonSide);
+  rect(xbutton2, ybutton2, buttonSide, buttonSide);
+  rect(xbutton3, ybutton3, buttonSide, buttonSide);
+  rect(xbutton4, ybutton4, buttonSide, buttonSide);
   //
 } //End setup
 //
 void draw() {
   ellipse(xleftEye, yleftEye, eyeDimater, eyeDimater);
   ellipse(xrightEye, yrightEye, eyeDimater, eyeDimater);
-  ellipse(xleftEyePupil, yleftEyePupil, leftEyePupilDimater, leftEyePupilDimater);
-  ellipse(xrightEyePupil, yrightEyePupil, rightEyePupilDimater, rightEyePupilDimater);
+  //ellipse(xleftEyePupil, yleftEyePupil, leftEyePupilDimater, leftEyePupilDimater);
+  //ellipse(xrightEyePupil, yrightEyePupil, rightEyePupilDimater, rightEyePupilDimater);
   triangle(xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3);
   strokeWeight(widthmouth);
   line(xmouth1, ymouth1, xmouth2, ymouth2);
@@ -91,9 +99,7 @@ void draw() {
   fill(measalecolor);
   MeasaleDiameter = random(smallerDimension*1/50, smallerDimension*1/20);
   xMeasale = random(xRectBackground+(MeasaleDiameter/2), xRectBackground+widthRectBackground-(MeasaleDiameter/2));
-  //while ( xMeasale < xbutton1+buttonSide ) xMeasale = random( xRectBackground+(MeasaleDiameter/2), (xRectBackground+widthRectBackground)-(MeasaleDiameter/2) );
   yMeasale = random(yRectBackground+(MeasaleDiameter/2), yRectBackground+heightRectBackground-(MeasaleDiameter/2));
-  //while ( yMeasale < ybutton1+buttonSide ) yMeasale = random( yRectBackground+(MeasaleDiameter/2), (yRectBackground+heightRectBackground)-(MeasaleDiameter/2) );
   noStroke();
   ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
   stroke(1);
