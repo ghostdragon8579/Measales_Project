@@ -155,9 +155,9 @@ image(rectQuit, xbutton2, ybutton2, buttonSide, buttonSide);
 //
 void keyPressed() {
   //
-  if(key==CODED && keyCode==SPACE);
-  if();
-  if();
+  if(key==' ') println("Started"); //Start
+  if(key==BACKSPACE) println("Stopped"); //Stop
+  if(key==ESC) println("exited");
   //
 } //End keyPressed
 //
@@ -165,9 +165,9 @@ void mousePressed() {
   //
   println("Mouse X: ", mouseX, "Mouse Y: ", mouseY);
   //
-  if(mouseX> mouseX< mouseY> mouseY<);
-  if();
-  if();
+  //if(mouseX> mouseX< mouseY> mouseY<) println("Started");
+  //if() println("Stopped");
+  //if() println("exited");
   if ( mouseX>xbutton2 && mouseX<xbutton2+buttonSide && mouseY>ybutton2 && mouseY<ybutton2+buttonSide ) exit();
   //
 } //End mousePressed
