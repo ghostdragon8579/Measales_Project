@@ -95,17 +95,25 @@ void draw() {
   color hoverOverColor=resetDefaultInk;
   if (mouseX>xbutton1 && mouseX<xbutton1+buttonSide && mouseY>ybutton1 && mouseY<ybutton1+buttonSide) {
   hoverOverColor = Pine;
+  fill(hoverOverColor);
+  rect(xbutton1, ybutton1, buttonSide, buttonSide);
+  fill(resetDefaultInk);
   } else if (mouseX>xbutton3 && mouseX<xbutton3+buttonSide && mouseY>ybutton3 && mouseY<ybutton3+buttonSide) {
   hoverOverColor = Orange;
+  fill(hoverOverColor);
+  rect(xbutton3, ybutton3, buttonSide, buttonSide);
+  fill(resetDefaultInk);
   } else if (mouseX>xbutton4 && mouseX<xbutton4+buttonSide && mouseY>ybutton4 && mouseY<ybutton4+buttonSide) {
   hoverOverColor = navy;
-  } else {
+  fill(hoverOverColor);
+  rect(xbutton4, ybutton4, buttonSide, buttonSide);
   fill(resetDefaultInk);
-}
+  } else {
 rect(xbutton1, ybutton1, buttonSide, buttonSide);
 rect(xbutton3, ybutton3, buttonSide, buttonSide);
 rect(xbutton4, ybutton4, buttonSide, buttonSide);
 fill(resetDefaultInk);
+}
 //
 ellipse(xleftEye, yleftEye, eyeDimater, eyeDimater);
 ellipse(xrightEye, yrightEye, eyeDimater, eyeDimater);
@@ -126,7 +134,6 @@ noStroke();
 ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
 stroke(1);
 fill(resetcolor);
-image(rectQuit, xbutton2, ybutton2, buttonSide, buttonSide);
 //
 fill(verdant);
 textAlign(CENTER, CENTER);
@@ -142,14 +149,25 @@ textFont(InitialFont, 40);
 text(Stop, xbutton3, ybutton3, buttonSide, buttonSide);
 fill(resetDefaultInk);
 //
+image(rectQuit, xbutton2, ybutton2, buttonSide, buttonSide);
+//
 } //End draw
 //
 void keyPressed() {
+  //
+  if(key==CODED && keyCode==SPACE);
+  if();
+  if();
+  //
 } //End keyPressed
 //
 void mousePressed() {
+  //
   println("Mouse X: ", mouseX, "Mouse Y: ", mouseY);
-  //xbutton2, ybutton2, buttonSide
+  //
+  if(mouseX> mouseX< mouseY> mouseY<);
+  if();
+  if();
   if ( mouseX>xbutton2 && mouseX<xbutton2+buttonSide && mouseY>ybutton2 && mouseY<ybutton2+buttonSide ) exit();
   //
 } //End mousePressed
