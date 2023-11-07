@@ -1,4 +1,5 @@
 //Global Variables
+String Start="Start", Stop="Stop";
 PImage rectQuit;
 PFont IntroductionFont;
 PFont InitialFont;
@@ -22,7 +23,7 @@ float xmouth1, ymouth1, xmouth2, ymouth2, widthmouth, resetmouth;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
 float faceX, faceY, faceDiameter;
 float xMeasale, yMeasale, MeasaleDiameter;
-String Start="Start", Stop="Stop";
+Boolean measlesON=false;
 //
 void setup() {
   size(1200, 800);
@@ -131,7 +132,7 @@ MeasaleDiameter = random(smallerDimension*1/50, smallerDimension*1/20);
 xMeasale = random(xRectBackground+(MeasaleDiameter/2), xRectBackground+widthRectBackground-(MeasaleDiameter/2));
 yMeasale = random(yRectBackground+(MeasaleDiameter/2), yRectBackground+heightRectBackground-(MeasaleDiameter/2));
 noStroke();
-ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
+if (measlesON==true) ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
 stroke(1);
 fill(resetcolor);
 //
@@ -155,20 +156,17 @@ image(rectQuit, xbutton2, ybutton2, buttonSide, buttonSide);
 //
 void keyPressed() {
   //
-  if(key==' ') println("Started"); //Start
-  if(key==BACKSPACE) println("Stopped"); //Stop
-  if(key==ESC) println("exited");
+  if(key==' ') measlesON=true; //Start
+  if(key==BACKSPACE) measlesON=false; //Stop
+  if(key==ESC) exit();
   //
 } //End keyPressed
 //
 void mousePressed() {
   //
-  println("Mouse X: ", mouseX, "Mouse Y: ", mouseY);
-  //
-  //if(mouseX> mouseX< mouseY> mouseY<) println("Started");
-  //if() println("Stopped");
-  //if() println("exited");
-  if ( mouseX>xbutton2 && mouseX<xbutton2+buttonSide && mouseY>ybutton2 && mouseY<ybutton2+buttonSide ) exit();
+  if(mouseX>xbutton1 && mouseX<xbutton1+buttonSide && mouseY>ybutton1 && mouseY<ybutton1+buttonSide) measlesON=true;
+  if(mouseX>xbutton3 && mouseX<xbutton3+buttonSide && mouseY>ybutton3 && mouseY<ybutton3+buttonSide) measlesON=false;
+  if(mouseX>xbutton2 && mouseX<xbutton2+buttonSide && mouseY>ybutton2 && mouseY<ybutton2+buttonSide) exit();
   //
 } //End mousePressed
 //
