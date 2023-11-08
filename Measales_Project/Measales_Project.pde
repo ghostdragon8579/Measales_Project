@@ -16,6 +16,8 @@ float xbutton2, ybutton2;
 float xbutton3, ybutton3;
 float xbutton4, ybutton4;
 float xleftEye, yleftEye, xrightEye, yrightEye, eyeDimater;
+float xleftEyePupil, yleftEyePupil, PupilDimater;
+float xrightEyePupil, yrightEyePupil;
 float xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3;
 float xmouth1, ymouth1, xmouth2, ymouth2, widthmouth, resetmouth;
 float xRectBackground, yRectBackground, widthRectBackground, heightRectBackground;
@@ -42,6 +44,11 @@ void setup() {
   xrightEye = xRectBackground+(smallerDimension*7/10);
   yrightEye = yRectBackground+(smallerDimension*1/4);
   eyeDimater = smallerDimension*1/10;
+  //xleftEyePupil = ;
+  //yleftEyePupil = ;
+  //xrightEyePupil = ;
+  //yrightEyePupil = ;
+  //PupilDimater = eyeDimater/2;
   xTriangle1 = faceX;
   yTriangle1 = yrightEye+60;
   xTriangle2 = xleftEye+80;
@@ -110,6 +117,8 @@ void draw() {
   //
   ellipse(xleftEye, yleftEye, eyeDimater, eyeDimater);
   ellipse(xrightEye, yrightEye, eyeDimater, eyeDimater);
+  //ellipse(xleftEyePupil, yleftEyePupil, PupilDimater, PupilDimater);
+  //ellipse(xrightEyePupil, yrightEyePupil, PupilDimater, PupilDimater);
   triangle(xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3);
   strokeWeight(widthmouth);
   line(xmouth1, ymouth1, xmouth2, ymouth2);
@@ -127,7 +136,6 @@ void draw() {
   }
   stroke(1);
   fill(resetcolor);
-  //ellipse(faceX, faceY, faceDiameter, faceDiameter);
   //
   fill(verdant);
   textAlign(CENTER, CENTER);
