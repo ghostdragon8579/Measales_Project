@@ -25,9 +25,16 @@ void MeasalesScreen () {
   //
   ellipse(xleftEye, yleftEye, eyeDimater, eyeDimater);
   ellipse(xrightEye, yrightEye, eyeDimater, eyeDimater);
-  //ellipse(xleftEyePupil, yleftEyePupil, PupilDimater, PupilDimater);
-  //ellipse(xrightEyePupil, yrightEyePupil, PupilDimater, PupilDimater);
+  fill(navy);
+  ellipse(xleftEyeIris, yleftEyeIris, IrisDimater, IrisDimater);
+  ellipse(xrightEyeIris, yrightEyeIris, IrisDimater, IrisDimater);
+  fill(black);
+  ellipse(xleftEyePupil, yleftEyePupil, PupilDimater, PupilDimater);
+  ellipse(xrightEyePupil, yrightEyePupil, PupilDimater, PupilDimater);
+  fill(skincolor2);
+  strokeWeight(strokeTriangle);
   triangle(xTriangle1, yTriangle1, xTriangle2, yTriangle2, xTriangle3, yTriangle3);
+  fill(resetDefaultInk);
   strokeWeight(widthmouth);
   line(xmouth1, ymouth1, xmouth2, ymouth2);
   strokeWeight(resetmouth);
@@ -43,7 +50,7 @@ void MeasalesScreen () {
     if (measlesON==true) ellipse(xMeasale, yMeasale, MeasaleDiameter, MeasaleDiameter);
   }
   stroke(1);
-  fill(resetcolor);
+  fill(resetDefaultInk);
   //
   fill(verdant);
   textAlign(CENTER, CENTER);
